@@ -1,0 +1,8 @@
+https://dotnetthoughts.net/generating-code-coverage-reports-in-dotnet-core/
+
+dotnet tool install --global dotnet-coverage 
+dotnet tool install --global dotnet-reportgenerator-globaltool
+ 
+dotnet coverage collect dotnet test --output-format cobertura --output .\Tests\CodeCoverage.xml
+
+reportgenerator -reports:.\Tests\CodeCoverage.xml -targetdir:".\Tests\CoverageReport" -reporttypes:Html -assemblyfilters:+AutomatedTestsInCSharp;+Domain;+Repositories
