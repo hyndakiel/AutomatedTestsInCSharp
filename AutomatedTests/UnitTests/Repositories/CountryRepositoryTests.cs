@@ -81,6 +81,18 @@ namespace AutomatedTests.UnitTests.Repositories
 			result.Name.Should().BeEquivalentTo(expectedResult.Name);
 		}
 
+		[Fact]
+		public async Task GetByNameAsync_Should_Return_Country_With_Empty_Name()
+		{
+			var name = string.Empty;
+
+			var countryRepository = new CountryRepository();
+
+			var result = await countryRepository.GetByNameAsync(name);
+
+			result.Should().BeNull();
+		}
+
 		public static IEnumerable<object[]> GetNames()
 		{
 			yield return new object[] { "Finland" };

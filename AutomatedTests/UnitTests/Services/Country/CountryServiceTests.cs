@@ -34,5 +34,5 @@ namespace AutomatedTests.UnitTests.Services.Country
 
             result.Should().BeEquivalentTo(countries);
         }
-    }
+	}
 }
