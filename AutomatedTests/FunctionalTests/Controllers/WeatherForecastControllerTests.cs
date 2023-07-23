@@ -30,6 +30,5 @@ namespace AutomatedTests.FunctionalTests.Controllers
 				forecast.Date.Should().Be(DateTime.Today.AddDays(1));
 			}
 		}
-
 	}
 }
